@@ -1,0 +1,659 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Produse și servicii</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="58fbadf1-94b8-4d63-a93e-1edb9cf9d3af" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">💰</span></div><h1 class="page-title">Produse și servicii</h1></header><div class="page-body"><h2 id="234f16c3-4ac8-4c8f-9fc5-8d2227a72e21" class="">Contul curent</h2><ul id="5332ffdc-ac02-46af-b333-a2ed528db1b9" class="bulleted-list"><li style="list-style-type:disc">Se poate deschide prin:<ul id="cdc1edf7-7170-4d40-a9be-701fe78c1c57" class="bulleted-list"><li style="list-style-type:circle">Sucursală</li></ul><ul id="aaeeda80-bdb7-4725-8606-4c970b8a18ee" class="bulleted-list"><li style="list-style-type:circle">OB -  doar într-o altă monedă decât cel existent</li></ul></li></ul><ul id="ba4af23a-1122-4c91-bed1-004a6d5094ce" class="bulleted-list"><li style="list-style-type:disc">se închide în sucursală</li></ul><ul id="b8d8d134-33cd-4cc3-81ae-b09d6607075b" class="bulleted-list"><li style="list-style-type:disc">Disponibil în: <mark class="highlight-red">RON, EUR, USD, GBP, HUF</mark></li></ul><ul id="1895532d-511e-4a8f-9f11-68a9cd750ac4" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>Oferta genius cont</strong></mark> </summary><ul id="55de7dd7-4420-4e78-adc1-9edd0080e8e0" class="toggle"><li><details open=""><summary><mark class="highlight-blue"><strong>Genius Cont</strong></mark></summary><ul id="55f2c3a5-6989-4b1d-9cd3-909513124cb5" class="bulleted-list"><li style="list-style-type:disc">beneficii de bază:<ul id="acbe87ac-86b9-480a-badb-36faa843efa4" class="bulleted-list"><li style="list-style-type:circle">cont curent în <mark class="highlight-red">RON</mark> cu <mark class="highlight-red">ZERO</mark> comision de administrare pentru:<ul id="a6a9dd2d-f582-453b-9bee-83471db22c36" class="bulleted-list"><li style="list-style-type:square">cont</li></ul><ul id="0525feff-50f5-449b-bba9-af166b72241c" class="bulleted-list"><li style="list-style-type:square">retrageri numerar la orice ATM din România</li></ul><ul id="f760f1d7-89e6-4647-ac98-da6f81230eff" class="bulleted-list"><li style="list-style-type:square">transfer către orice bancă din România plin OB</li></ul><ul id="8677b82e-26cc-448a-a1a5-3d9af9fe7700" class="bulleted-list"><li style="list-style-type:square">MB/OB </li></ul><ul id="20793bdc-5389-4b0f-a991-809f0c6599c6" class="bulleted-list"><li style="list-style-type:square">debitare directă</li></ul></li></ul></li></ul></details></li></ul><ul id="2eb45c10-1ba5-474a-b090-dce5f14315f3" class="toggle"><li><details open=""><summary><strong>Genius Cont Junior</strong></summary><ul id="b9b0722f-7ffa-44ee-a9ba-d81d0b622950" class="bulleted-list"><li style="list-style-type:disc">pentru minori cu vârstă până în 18 ani</li></ul><ul id="1b49ad18-f007-4efd-bca2-019adb5fa1db" class="bulleted-list"><li style="list-style-type:disc">beneficii în plus față de cele de bază:<ul id="a9573142-8811-4467-b291-267c641505af" class="bulleted-list"><li style="list-style-type:circle">card: VISA CLASIC/Mastercard Young</li></ul></li></ul></details></li></ul><ul id="5d68ef48-6613-4167-b2bc-1de85b52fb07" class="toggle"><li><details open=""><summary><strong>Genius ICont</strong></summary><ul id="2ae8c6c0-f179-40af-b109-c1bab9ed3a21" class="bulleted-list"><li style="list-style-type:disc">pentru clienți cu vârstă mai mare de 18, dar mai mică de 24 de ani</li></ul><ul id="5fa2b206-464f-4827-b0f6-9d60526f4e39" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple_background">beneficii în plus față de cele de bază</mark>:<ul id="2bd370d1-39da-410f-9256-43e078329cdc" class="bulleted-list"><li style="list-style-type:circle">card: VISA CLASIC</li></ul></li></ul><ul id="7568ae9a-921a-4440-bd4d-48deb215f209" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple_background">condiții</mark>:<ul id="2234ee81-fd0a-4784-817f-0b6423271412" class="bulleted-list"><li style="list-style-type:circle">efectuarea unei plăți cu cardul la POS/Internet </li></ul></li></ul></details></li></ul><ul id="9fc35699-24ea-4a02-98fe-71e95ed6fe6e" class="toggle"><li><details open=""><summary><strong>Genius Cont Clasic</strong></summary><ul id="dec40964-316a-4969-992a-e69e0a14c6f7" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple_background">beneficii în plus față de cele de bază</mark>:<ul id="710113c5-a8bb-4c8d-b819-ace59b0bae83" class="bulleted-list"><li style="list-style-type:circle">card: VISA CLASIC</li></ul></li></ul><ul id="c867129d-8833-44bd-9c3a-d461f4fc2356" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple_background">condiții</mark>:<ul id="f0145264-8e7c-4ff0-9b15-446aea51e688" class="bulleted-list"><li style="list-style-type:circle">efectuarea unei plăți cu cardul la POS/Internet </li></ul><ul id="0ceefa16-9cd2-4a7c-93ba-03b94b89be34" class="bulleted-list"><li style="list-style-type:circle">încasare recurentă ≥ 700RON</li></ul></li></ul></details></li></ul><ul id="2419226b-3646-4439-b923-dcf4da82486c" class="toggle"><li><details open=""><summary><strong>Genius Cont Gold</strong></summary><ul id="82ba022b-da95-4ce3-b104-9327f500b1a2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple_background">beneficii</mark> în plus față de cele de bază:<ul id="ccd645b5-dd0b-4a1c-950f-0a97d136a775" class="bulleted-list"><li style="list-style-type:circle">un cont curent în <mark class="highlight-red">EUR</mark> cu <mark class="highlight-red">ZERO</mark> comision de administrare</li></ul><ul id="3f3a8d3e-48a3-47e3-af91-815a2fb5b402" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red">ZERO</mark> comisiun pentru retrageri internaționale</li></ul><ul id="735a828e-8a1b-4244-9c50-419bf18b5d44" class="bulleted-list"><li style="list-style-type:circle">card: VISA CLASIC sau VISA GOLD</li></ul><ul id="9e670fde-135c-4646-9ca7-261507ce0576" class="bulleted-list"><li style="list-style-type:circle">asigurare de călătorie </li></ul><ul id="5afc245c-6364-4ed9-89d8-7c71272beeb8" class="bulleted-list"><li style="list-style-type:circle">acces VIP la aeroport în lounge</li></ul></li></ul><ul id="f037867e-bb7b-4c9f-8d62-2549d755e412" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple_background">condiții</mark>:<ul id="6b88a992-9c86-4643-bce0-5d4b86da7720" class="bulleted-list"><li style="list-style-type:circle">efectuarea unei plăți cu cardul la POS/Internet </li></ul><ul id="bea5f779-8eee-4c00-93bd-a69f6c42d361" class="bulleted-list"><li style="list-style-type:circle">încasare recurentă ≥ 5 000RON sau economii/investiții ≥ 200 000RON</li></ul></li></ul></details></li></ul><ul id="975c101a-6ff7-4021-ab95-7c596606b4c0" class="toggle"><li><details open=""><summary><strong>Genius Cont Platinum</strong></summary><ul id="eb1c8342-6aeb-4f3e-94e1-43a61d8ad0db" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple_background">beneficii</mark> în plus față de cele de bază:<ul id="2965e756-90b2-4983-94bd-b6233a17bd14" class="bulleted-list"><li style="list-style-type:circle">un cont curent în <mark class="highlight-red">EUR</mark> cu <mark class="highlight-red">ZERO</mark> comision de administrare</li></ul><ul id="df85907b-38e8-46e4-804b-715bbd2f9e63" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-red">ZERO</mark> comisiun pentru retrageri internaționale</li></ul><ul id="82eb5d37-1977-4ce7-bcdf-cd53c251c780" class="bulleted-list"><li style="list-style-type:circle">card: VISA CLASIC sau VISA GOLD</li></ul><ul id="241e7147-0e99-4a15-8a48-28977dcde34c" class="bulleted-list"><li style="list-style-type:circle">asigurare de călătorie </li></ul><ul id="a6b821de-208f-42a1-8bc4-a4a452908ac6" class="bulleted-list"><li style="list-style-type:circle">acces VIP la aeroport în lounge</li></ul></li></ul><p id="3f0cffec-2213-43dd-9095-53d2e27ae344" class="">
+</p><ul id="017e9781-ebf2-4b31-a744-c5b2f3c2fa88" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple_background">condiții</mark>:<ul id="623d5171-f6c3-438d-9f12-e8f3030ea56f" class="bulleted-list"><li style="list-style-type:circle">efectuarea unei plăți cu cardul la POS/Internet </li></ul><ul id="1fab4e4a-6340-4bda-9523-a2eb385c1f3b" class="bulleted-list"><li style="list-style-type:circle">încasare recurentă ≥ 5 000RON sau economii/investiții ≥ 200 000RON</li></ul><p id="fc6cd851-8494-4cdb-ab09-fdec20af2ced" class="">
+</p></li></ul></details></li></ul></details></li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="bcaaa7ba-70a0-43ac-98d2-6949055e89f5"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Cardurile atașate la conturi se închid în sucursală.</div></figure><h2 id="6e813d72-063c-43d9-8c89-b5881e8a0d46" class="">Genius Proiect</h2><ul id="72333749-1f87-42f4-ae87-f5a148f6065f" class="bulleted-list"><li style="list-style-type:disc">Asigurare de viață oferită <mark class="highlight-purple_background">clienților deținători de cont curent în RON</mark></li></ul><ul id="5e2fe49d-4e8b-4bca-b173-6f37336edba0" class="bulleted-list"><li style="list-style-type:disc">Comision: <mark class="highlight-red">5 RON/lună </mark>și se retrage în a 3-a zi lucrătoare a lunii</li></ul><h2 id="e7bb66b5-2951-4eb3-8e23-f46c01d087a6" class="">ATM vs. BNA</h2><table id="8c6a20f8-639b-4bcf-8340-b54b2779ee5b" class="simple-table"><thead><tr id="98247fb9-1020-40e4-a812-d2722a31df0c"><th id="p`gr" class="simple-table-header">ATM</th><th id="A]m&lt;" class="simple-table-header">BNA</th></tr></thead><tbody><tr id="5910a390-ffd1-46a5-baae-bc151e7a02f8"><td id="p`gr">Retrageri numerar</td><td id="A]m&lt;">Retrageri numerar</td></tr><tr id="f62b5162-8514-4755-bf40-368c87702d1b"><td id="p`gr">Verificare sold</td><td id="A]m&lt;">Verificare sold</td></tr><tr id="27ade08c-5350-40e4-9a4a-8f26997a38e3"><td id="p`gr">Schimbare/setate PIN</td><td id="A]m&lt;">Idem</td></tr><tr id="d812ad26-be9a-40e0-b613-461fdb7b65cb"><td id="p`gr">Schimbare PAROLĂ STATICĂ</td><td id="A]m&lt;">Idem</td></tr><tr id="4b73bd6d-79c3-4160-aee1-a16be19a76a5"><td id="p`gr">Dez/activare Contactless</td><td id="A]m&lt;">Idem</td></tr><tr id="3edbde9a-8687-4a66-9967-42f404152b13"><td id="p`gr">Mini extras cont (ultimele 10 tranzacții din ultimele 30 zile)</td><td id="A]m&lt;">Idem</td></tr><tr id="379091bc-1719-48e4-a1ba-e24a41773325"><td id="p`gr">Plată utilități către furnizori agreați </td><td id="A]m&lt;">Idem</td></tr><tr id="9accdf87-2628-4000-b130-1fb6a3bd6f95"><td id="p`gr">-</td><td id="A]m&lt;">Plată utilități- scanare cod bare</td></tr><tr id="4b7894ed-1a99-4fec-899a-816618b50991"><td id="p`gr">-</td><td id="A]m&lt;">Depunere numerar RON, EUR, USD - DOAR carduri UCB</td></tr><tr id="1763b437-6474-4199-bd8b-9721a1954310"><td id="p`gr">-</td><td id="A]m&lt;">Schimb valutar - din EUR/USD în RON</td></tr></tbody></table><p id="1815ed47-9db3-45f2-b25b-2d8c0ba578c0" class="">Limită ATM: 4 000RON/tranzacție ( nu încap banii pe fanta ATM-ului)</p><p id="c9137e0b-ca5e-4d64-8e55-70afd06ea783" class="">Limită ATM Euronet: 2 000 RON/tranzacție</p><h2 id="918b4b93-5ee7-4379-995a-f12174b65dfe" class="">Happy Hour</h2><ul id="de3e3e9e-4272-4c86-94b9-719603f02c31" class="bulleted-list"><li style="list-style-type:disc">beneficiu pentru clientii UCB </li></ul><ul id="8cf5e613-6424-492a-995a-4ccf73c22beb" class="bulleted-list"><li style="list-style-type:disc">schimb valutar la curs de BNR</li></ul><ul id="c4c591d5-d17b-4dd2-8914-c0b2d7a9696b" class="bulleted-list"><li style="list-style-type:disc">doar in intervalul 13:15 - 14:15 în zile lucrătoare</li></ul><ul id="35b456d0-202c-48a4-8a43-a252ce034bf7" class="bulleted-list"><li style="list-style-type:disc">max 1 tranzacție, max 1000 EUR</li></ul><h2 id="1558d6b9-4c41-4f7d-8a2f-668b31a8ce69" class="">Debitare directă</h2><ul id="29306c70-b212-45ff-8a84-4f8978a8ea4d" class="bulleted-list"><li style="list-style-type:disc">beneficiu prin care UCB facilitează clienților plata utilităților către furnizorii agreați </li></ul><h2 id="0d2c4a56-37d8-418e-a0d8-4c748ac17f39" class="">Produse economisire</h2><ol type="1" id="a7cba69c-23a8-48bd-9d4b-8f3aa970fbce" class="numbered-list" start="1"><li><strong>Depozitul la termen</strong><ul id="cbc9a207-2c4e-4bc4-b107-6dc511af67ce" class="bulleted-list"><li style="list-style-type:disc">este necesar ca un client să dețină un <mark class="highlight-purple">cont curent</mark> și un <mark class="highlight-purple">cont de depozit</mark></li></ul><ul id="49920e31-38a9-474e-a109-8f300216b7ad" class="bulleted-list"><li style="list-style-type:disc">se <mark class="highlight-red">contractează prin cerere scrisă în sucursală sau OB</mark></li></ul><ul id="4e24ad1b-4b14-4118-bd79-25e09fdac837" class="bulleted-list"><li style="list-style-type:disc">un despozit se <mark class="highlight-red">constituie/lichidează în sucursală, OB, MB</mark><mark class="highlight-purple"> </mark>- doar dacă are deja un cont deschis</li></ul><ul id="9ce0aea6-1fd9-4e61-aa35-13cf9eeebd59" class="bulleted-list"><li style="list-style-type:disc">disponibil în <mark class="highlight-purple">RON/EUR/USD </mark>pe <mark class="highlight-purple">3/6/12 luni</mark></li></ul><ul id="c255f248-0cbd-4c55-8602-a8299e09abf0" class="bulleted-list"><li style="list-style-type:disc">sumă minimă: 500RON/200EUR/200USD</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2ec63a5a-9585-4b95-b2fe-349d995f14dc"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-red"><span style="border-bottom:0.05em solid"> </span></mark>Dacă un depozit este constituit dintr-un cont de economii, acesta nu se va închide până în momentul în care depozitul este scadent/denunțat. </div></figure><ul id="406f2702-75cd-41e6-ab81-976db1f756a7" class="bulleted-list"><li style="list-style-type:disc">2 tipuri de depozit: <ul id="207a01da-539e-4c76-b773-fe4ade512bf2" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">cu prelungire automată și capitalizare a dobânzii</span>: în momentul în care se prelungește depozitul, la suma inițială se adaugă și dobânda primită după ajungerea la maturitate</li></ul><ul id="a0211396-ca7f-44c1-81cc-567991589b16" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">cu prelungire automată și fără capitalizare a dobânzii:</span> în momentul în care se prelungește depozitul, acesta se va constitui doar cu suma inițială, dobânda aferentă rămânând pe contul din care s-a constituit depozitul</li></ul></li></ul><ul id="7e2ef77e-8344-4d64-83b3-731e658f738f" class="bulleted-list"><li style="list-style-type:disc">dobânda se regăsește în <a href="../Inbound%20929cd53b27a743fd815a6a795b9982b7.html"><strong>broșura de taxe și comisioane</strong></a></li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a042335a-9a5d-4794-9e59-08ea444d5621"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Dacă scadența pică într-o zi nelucrătoare, atunci depozitul se va considera scadent în prima zi lucrătoare imediat următoare.</div></figure></li></ol><ol type="1" id="1b0631b9-6c55-484d-8b3d-4b47f4d441aa" class="numbered-list" start="2"><li><strong>Contul de economii</strong><ul id="5a3f7f62-d8d2-497e-8003-be6ed92cdfb2" class="bulleted-list"><li style="list-style-type:disc">produs legat la contul curent cu <mark class="highlight-red">ZERO </mark>comision de deschidere și administrare</li></ul><ul id="df16e546-cf18-4bde-b1fd-8ac78d3bb3ec" class="bulleted-list"><li style="list-style-type:disc">se <mark class="highlight-red">contractează în sucursală, OB, MB</mark> </li></ul><ul id="67e6210f-5345-45b1-b88e-65c2f76735ae" class="bulleted-list"><li style="list-style-type:disc">se închide doar în <mark class="highlight-red">sucursală</mark> </li></ul><ul id="ba78e1d0-af00-42d0-9065-db052fb6dfa6" class="bulleted-list"><li style="list-style-type:disc">disponibil în <mark class="highlight-purple">RON/EUR/USD</mark></li></ul><ul id="5f0f05fe-bad3-48d0-b83f-1e4b576e62bd" class="bulleted-list"><li style="list-style-type:disc">dobânda se calculează la <strong>soldul zilnic</strong> și va fi virată la <strong>finalul </strong>lunii</li></ul><ul id="43f3983c-7b01-4ec8-b09a-14c854baeaea" class="bulleted-list"><li style="list-style-type:disc">nu este o sumă minimă</li></ul></li></ol><ol type="1" id="b2489b53-88ac-43bd-b2f3-19f4fc4b3949" class="numbered-list" start="3"><li><strong>Contul de economii junior</strong><ul id="e2ff70d7-0930-4595-9ace-2a4bf1b68f90" class="bulleted-list"><li style="list-style-type:disc">deschis de către reprezentanții legali minorilor (0 - 18 ani)</li></ul><ul id="781e574c-04d2-4b62-a0d2-8dc246ef3532" class="bulleted-list"><li style="list-style-type:disc">se <mark class="highlight-red">contractează/închide doar în sucursală</mark></li></ul><ul id="fc93e9d4-85fe-494f-922f-2e9909705418" class="bulleted-list"><li style="list-style-type:disc">retragerea sumelor din cont de face doar la caserie de către:<ul id="4bf495f2-d877-4650-a602-89a143838672" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">reprezentanții legali</span>: dacă <mark class="highlight-red">minorul are vârsta &lt; 14 ani</mark>, dar cu o <mark class="highlight-red">declarație pe propria răspundere</mark> că banii vor fi folosiți în interesul minorului </li></ul><ul id="6e49bffa-d99b-476b-821e-1d2337cecb52" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">minorul</span> (vârstă ≥ 14): cu acordul reprezentantului legal</li></ul></li></ul></li></ol><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="655a0bc1-b7eb-4bab-8418-948659e2788a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Pentru minor serviciile OB, MB, Info SMS se deschid în sucursală</div></figure><h3 id="d533b2ab-da0b-495f-a60a-3b5592c46c9c" class="">Cardul Meniu</h3><ul id="68841efa-3073-4719-ae97-43c4a95dfade" class="bulleted-list"><li style="list-style-type:disc">angajatorul îl oferă angajatului</li></ul><ul id="a76b31c2-1dc6-48ca-9021-b0909e99f585" class="bulleted-list"><li style="list-style-type:disc">permite:<ul id="6c31bf4e-89a4-47d0-bb54-8cd94919837f" class="bulleted-list"><li style="list-style-type:circle">tranzacții POS</li></ul><ul id="63bdd821-c93f-4a17-acd7-e507da8d8758" class="bulleted-list"><li style="list-style-type:circle">interogare sold la ATM-uri UCB</li></ul><ul id="137b9d9b-1796-4be8-b219-85b02bd060e0" class="bulleted-list"><li style="list-style-type:circle">setare PIN</li></ul><ul id="214a0cc5-311e-4691-9bc0-9584fa1766ea" class="bulleted-list"><li style="list-style-type:circle">vizualizare istoric tranzacții</li></ul><ul id="8fc37cbe-5421-4b5c-82ce-a95f2d46dfee" class="bulleted-list"><li style="list-style-type:circle">comercianți parteneri: <a href="http://unicredit.ro">unicredit.ro</a> → carduri → card meniu → rețea parteneri</li></ul></li></ul><h3 id="ec563d44-8eaf-4a98-adb0-769c6aee961d" class="">PRODUSE CREDITARE</h3><blockquote id="e86597f5-6698-427f-b5aa-b8e6a3fe6b5a" class="">Condiții minime eligibilitate:<ol type="1" id="9798fd7d-70cf-40d8-9c8b-9fe785b57641" class="numbered-list" start="1"><li>vechime ≥ 3luni la actualul angajator cu contract pe perioadă nedeterminată </li></ol><ol type="1" id="19851450-4a04-4d53-8da0-305a0e885fc3" class="numbered-list" start="2"><li>vechime ≥ 12luni, cu întreruperi &lt; 60 de zile, în câmpul muncii</li></ol><ol type="1" id="d7fc4358-c26a-4e17-82f7-4de55f42b7f0" class="numbered-list" start="3"><li>să nu fi întâmpinat probleme cu plăți (să nu apară cu restanțe înregistrate la biroul de credite)</li></ol><ol type="1" id="2f885c40-97a0-4ada-bd75-65518a5c3922" class="numbered-list" start="4"><li>să aibă venitul net aferent salariului minim brut pe econnomie</li></ol></blockquote><ol type="1" id="279a98e3-8869-49dd-96ff-3bda90f704df" class="numbered-list" start="1"><li><strong> Cardul de credit</strong></li></ol><ul id="05372253-efd5-4b20-be2d-0819c9150110" class="bulleted-list"><li style="list-style-type:disc">împrumut acordat de către bancă clienților pe o perioadă prestabilită în baza condițiilor de eligibilitate</li></ul><ul id="babd1710-9e7c-4741-ba00-8795cc9d264c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">atașat la o linie de credit</mark>, securizat și standardizat</li></ul><p id="424b2c1d-78b0-4b62-b73a-fcb96df3a9be" class="">  2. <strong>Overdraft</strong></p><ul id="0cb4c46f-d932-4f9a-ba8a-fb97e25bb0ec" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">se contractează pe un an de zile</mark> cu posibilitate de prelungire la solicitarea clientului</li></ul><ul id="99ab66f2-f3e2-41b5-9473-626e663e1d91" class="bulleted-list"><li style="list-style-type:disc">se poate obține <mark class="highlight-red">minim 1 salariu, maxim 3</mark> ( 5 în cazul convețiilor salariale)</li></ul><figure class="block-color-purple_background callout" style="white-space:pre-wrap;display:flex" id="de0167b8-4525-4f6d-91b8-739ff980889c"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Dobânda se calculează la<mark class="highlight-red"> soldul zilnic</mark> și se retrage din contul curent în <mark class="highlight-red">ultima zi lucrătoare</mark> a fiecărei luni</div></figure><p id="fd6c638d-7406-4028-9a3e-ec5b051e93b3" class="">
+</p></div></article></body></html>

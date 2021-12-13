@@ -1,0 +1,659 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>CORE</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="74ccacb0-6cdb-4fbb-9ee0-cc45ca60c33f" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📌</span></div><h1 class="page-title">CORE</h1></header><div class="page-body"><h2 id="7c25e817-0f87-45d8-a09a-4c99c64ff9d1" class="">3. Retail Enquiries Menu</h2><ul id="1b2ca046-82bf-4fa4-a1eb-7de9b832ba0b" class="toggle"><li><details open=""><summary><strong>3 → 2 Client Search </strong></summary><ul id="c7efdac7-f14a-414d-8371-282781eb00b5" class="bulleted-list"><li style="list-style-type:disc"><strong>0 - </strong>Nume</li></ul><ul id="e8acfef6-8a0a-4fcb-87b9-8d2a03111bfd" class="bulleted-list"><li style="list-style-type:disc">1 - CoreID</li></ul><ul id="a149ee04-9167-4f35-b950-1122e0558932" class="bulleted-list"><li style="list-style-type:disc">5 - CNP</li></ul><p id="820ed2aa-013e-4124-8620-ad1af64641be" class="">
+</p><p id="a551f61f-eb78-4130-bd98-2e88f45af8ce" class=""><strong>Selectăm clientul cu 1.</strong></p><p id="a4c256a1-22f8-4a3a-ab2e-a75d8acd6ff4" class=""><strong>Pag. 1 </strong>- nume complet, data nașterii</p><p id="199098ba-4553-41f3-ab1d-1adfef980ce4" class=""><strong>Pag. 2 </strong>- nr. tel. în relație cu banca</p><p id="1506f0b0-3b72-4f72-997b-7233a34f427a" class=""><strong>Pag. 3</strong> - angajatorul</p><p id="849f8294-edbf-4a9d-960e-3c859abe64f9" class=""><strong>Pag. 5 </strong>- viz. dacă este client VIP</p><p id="0e2db8cf-f0f2-4303-854c-884fd855f5a8" class="">
+</p><p id="10a05d70-ea19-452d-aed5-8c885975ec9b" class="">Din orice pagină <div class="indented"><p id="492cef21-026e-42a9-8502-5cd511ff5d00" class="">→ <em><strong>F9</strong></em> - buletinul + adresă email</p></div></p><p id="348c3ed6-0baa-4f92-9674-7562b7ca7d43" class="">Din Pag. 1 <div class="indented"><p id="388b618c-bcbc-48a7-bb58-1bdbcdc734ab" class="">→ <em><strong>ENTER</strong></em> - listă conturi<div class="indented"><ul id="c1450e2b-2552-4561-b97b-e55444f9593f" class="bulleted-list"><li style="list-style-type:disc">→ <em><strong>F7</strong></em> - conturile închise</li></ul><ul id="e60db837-1056-4cc4-acb0-efc6ae0e9613" class="bulleted-list"><li style="list-style-type:disc"><strong>1</strong> - selectăm contul<ul id="8de32acc-2f61-4d75-a35e-d6081496a291" class="bulleted-list"><li style="list-style-type:circle">→ <em><strong>F10 </strong></em>- viz. IBAN</li></ul></li></ul></div></p></div></p></details></li></ul><ul id="0ef40836-9431-41c0-9f17-170093c9a947" class="toggle"><li><details open=""><summary><strong>Dobânda la OVD</strong></summary><p id="7a3af0df-b388-4345-88f3-00c89c0f4a41" class="">Din Pag. 1<div class="indented"><p id="eac78867-e2aa-44bb-af4b-b2244d6c10d2" class="">→ <em><strong>Enter</strong></em> - listă conturi</p><ul id="1f086c6b-448c-42b5-b12b-30ff1a288d86" class="bulleted-list"><li style="list-style-type:disc"><strong>2</strong> - în fața contului a care este atașat ovd-ul</li></ul><ul id="615e8932-0dbb-4a6a-842c-f95c9770cbdf" class="bulleted-list"><li style="list-style-type:disc"><em><strong>→ ENTER</strong></em></li></ul><ul id="07841336-0281-4721-ba97-97654c9ef1bc" class="bulleted-list"><li style="list-style-type:disc"><em><strong>→ ENTER</strong></em></li></ul><ul id="3f760ba2-88c8-4b22-98f4-609c986204e6" class="bulleted-list"><li style="list-style-type:disc"><em><strong>F12</strong></em></li></ul><ul id="edb601e8-4476-4a38-8732-f24754ca6122" class="bulleted-list"><li style="list-style-type:disc">În câmpul date from introducem data la care s-a luat ultima data dobânda (ultima zi lucrătoare a lunii anterioare).</li></ul><p id="94a3058e-590a-4c88-bb37-22044aa97ee8" class="">Din câmpul <strong>TOTAL +</strong> <strong>SUMA UTILIZATĂ, </strong>pe care o luăm din Genius, putem comunica clientului suma întreagă pe care o are de achitat pentru a își închide ovd-ul</p></div></p></details></li></ul><h2 id="5c737108-f63f-437b-a027-2a24fba6268d" class="">4. Card Management System</h2><ul id="b9accf0f-e7ca-474b-a55e-7d27e31dcd0f" class="bulleted-list"><li style="list-style-type:disc"><strong>3 → 2</strong> - copy coreID</li></ul><ul id="f355b41d-af40-4ef2-a483-f48d3b997b9b" class="bulleted-list"><li style="list-style-type:disc"><strong>4 → 17</strong> - paste coreID și copy cardholder</li></ul><ul id="da6901fb-4298-4b9d-be12-68ef66eb9019" class="bulleted-list"><li style="list-style-type:disc"><strong>4 → 1 </strong><ul id="ebb5c163-4702-40de-bd24-ef3b231b5cf7" class="bulleted-list"><li style="list-style-type:circle">paste cardholder</li></ul><ul id="77379028-59df-469f-80d6-e0aa592d4a16" class="bulleted-list"><li style="list-style-type:circle"><strong>5 </strong>în fața cleintului</li></ul></li></ul><h2 id="da54e832-6bba-47a6-903f-84fc7fb3d010" class="">10. Direct Debit Menu</h2><ul id="a7fbe5c1-ad03-430b-a5bd-04261e6080ba" class="bulleted-list"><li style="list-style-type:disc">Dacă factura depășește pragul setat, atunci aceasta nu se va debita.</li></ul><ul id="e179d86d-a188-49a1-b15f-266e432f6e59" class="bulleted-list"><li style="list-style-type:disc"><strong>→ 1</strong></li></ul><ul id="88a3266f-01f3-4b5b-a7ee-476dcd57565a" class="bulleted-list"><li style="list-style-type:disc"><em><strong>SHIFT + F3 </strong></em>- în câmpul debit IBIS introducem <strong>NR. SCURT DE CONT</strong></li></ul><ul id="6f14e3d4-d699-443c-9edb-903b0cb5dc9e" class="bulleted-list"><li style="list-style-type:disc"><strong>5 </strong><em> </em>- viz. mai multe informații</li></ul><h2 id="92e1f10a-5149-4f47-9329-6c7578f43340" class="">6. EDP Menu</h2><p id="2ad8d336-fa6c-40b2-8e84-7dced1965896" class=""><strong>→ 1 → 1 </strong> - căutarea o facem după coreID</p><p id="bdc97476-f18a-4c62-b450-718b9f28de44" class=""><em><strong>Ecran 2</strong></em><div class="indented"><ul id="85ae6406-7cc5-4c6a-81d9-e4810a5995d4" class="bulleted-list"><li style="list-style-type:disc">în câmpul <em>SETTLEMENT ACCOUNT </em>viz. contul din care se retrage rata </li></ul><ul id="2b56867e-408a-4be2-8786-0bdf65871b34" class="bulleted-list"><li style="list-style-type:disc">viz. dacă este restant</li></ul></div></p><p id="eb15b766-2006-4925-8020-5cce025f6aad" class=""><em><strong>Ecran 3</strong></em><div class="indented"><ul id="18027e74-9d8d-48f3-b4f0-ea7d848529a0" class="bulleted-list"><li style="list-style-type:disc">% de dobândă standard și penalizatoare</li></ul></div></p><p id="b7857c39-163c-4a03-9e42-50b8f51e89b3" class=""><em><strong>Ecran 4</strong></em><div class="indented"><ul id="93e82f7a-69af-4896-a7b9-68c87f990267" class="bulleted-list"><li style="list-style-type:disc">informații despre date și valori</li></ul></div></p><figure class="block-color-purple_background callout" style="white-space:pre-wrap;display:flex" id="aa7aa6b5-f2d7-47ff-a06f-ab5c6fcd7c14"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Dacă scadența este într-o zi nelucrătoare, rata se va lua din contul clientului în următoarea zi lucrătoare</div></figure><p id="3181a574-7caa-481a-9494-7f8723f5e21c" class=""><em><strong>Ecran 5</strong></em><div class="indented"><ul id="4b450a2f-65df-453a-86ad-45bd588ef633" class="bulleted-list"><li style="list-style-type:disc">viz. comisionul de penalizare la zi</li></ul></div></p><blockquote id="89fa80ab-9f71-425d-9e88-2d18c522078e" class=""><strong>DIN ORICE ECRAN</strong><ul id="fc6d4cb0-220d-4a79-b85b-6c4474a4bc3e" class="bulleted-list"><li style="list-style-type:disc"><em><strong>SHIFT + F1 </strong></em>- viz. totalul de plată pentru închiderea creditului</li></ul></blockquote><p id="40ad3031-1607-462e-8b03-419af53dac23" class=""><em><strong>Ecran 7</strong></em><div class="indented"><ul id="5823ac10-ceca-4bbc-8419-f532146b1f61" class="bulleted-list"><li style="list-style-type:disc">viz. scadențarul - din ce este formată rata creditului</li></ul><ul id="d5f329e4-6a03-476d-a5f4-22b0b362b8ad" class="bulleted-list"><li style="list-style-type:disc"><em><strong>SHIFT + F7</strong></em> - graficul de rambursare</li></ul></div></p><p id="8734c0ac-168c-48cb-b09c-8e81757d1013" class="">
+</p></div></article></body></html>
